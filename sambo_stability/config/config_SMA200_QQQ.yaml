@@ -1,0 +1,38 @@
+# =============================
+# Config for SAMBO rolling stability
+# =============================
+
+# ---------- Processing stock price data ---------- #
+file_path_historical_data: "data/QQQ_daily_10yr_clean.csv"
+total_lookback_months: 108 # 9 years
+
+# ---------- Filepaths ---------- #
+basename: "Strat_SMA200_QQQ" # Used to determine results subfolder and file naming convention
+store_heatmap_key: "heatmap"
+
+# ---------- Strategy Class Information ---------- #
+strategy_path: "sambo_stability/Strat_SMA200.py"
+strategy_class: "Strat_SMA200"
+
+# ---------- Parameters to Optimize ---------- #
+param_ranges:
+  theta_enter: [10, 15, 20, 25, 30, 35, 40]
+  theta_exit: [60, 65, 70, 75, 80, 85, 90, 95]
+
+# ---------- Backtesting parameters ---------- #
+commission: 0.0001 # 0.01%
+initial_equity: 100000
+margin: 1.0
+max_tries: 100      # Number of SAMBO iterations to use (recommend ~20–50x num parameters)
+maximize_parameter: "Return [%]"
+
+# ---------- Time interval analysis variables ---------- #
+window_size: "504D"      # e.g. 90-day windows
+overlap: true           # 50% overlap if true, else consecutive windows
+include_last_partial: false  # set true to include trailing partial window
+
+# ---------- Post-backtesting Analysis variables ---------- #
+grid_resolution: 100        # Grid resolution to interpolate onto (square)
+smoothing_sigma: 2.5        # Sigma for Gaussian smoothing
+smoothing_mode: "nearest"   # Method for Gaussian smoothing
+top_fraction: 0.15          # Top fraction for Jaccard and Entropy plots
