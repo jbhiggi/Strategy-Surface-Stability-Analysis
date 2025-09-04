@@ -5,6 +5,7 @@
 ---
 
 ### Inputs & Notation
+
 - Closing price at time $t$, denoted $C_t$
 - Simple moving average (long-term filter):  
   $$\text{SMA}_{200}(t) = \frac{1}{200}\sum_{i=0}^{199} C_{t-i}$$
@@ -57,6 +58,7 @@
 ---
 
 ### Baselines to Report
+
 - Buy-and-Hold of the same asset (SPY, QQQ, or BTC) over the experiment sample.
 - Strategy equity curve (in-sample and walk-forward).
 - Metrics saved per backtest: Return [%], Sharpe, Sortino, MaxDD [%], exposure, turnover, #trades.

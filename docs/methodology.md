@@ -67,7 +67,6 @@ Strategies are implemented as **self-contained Python classes** (subclassing `ba
 ## 5. Time-Interval Backtesting (Rolling Windows)
 
 * Partition the dataset into windows controlled by two settings:
-
   * **Window length (W):** e.g., 252 trading days.
   * **Overlap (O):** controls whether windows overlap (e.g., 50%) or run consecutively without overlap.
     * If `overlap=True` → exact 50% overlap between consecutive windows.
@@ -92,10 +91,8 @@ This captures how parameter performance shifts across regimes.
   * Uses that model to balance exploration vs exploitation.
   * Vastly more efficient than random or brute-force grid search.
 * **Configuration:**
-
   * Parameter ranges specified in YAML config.
   * Max iterations (e.g., 100) - a good rule of thumb is 20–50 iterations per parameter dimension.
-
 Outputs from optimization:
 
 * `stats.csv`, `sambo_history.json`: trial parameters + metrics (Return, Sharpe, Sortino, Max. Drawdown, SAMBO results).
@@ -124,6 +121,7 @@ Outputs:
 * Define a **Top-X% region** (quantile cutoff).
 * Extract binary mask of high-performing cells.
 * Track the **top centroid** as the single best point after Gaussian smoothing, rather than the mean of the entire Top-X% region.
+920c963a5379e026bc23f39bc2d477
 
 **Metrics:**
 
