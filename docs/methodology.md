@@ -121,7 +121,6 @@ Outputs:
 * Define a **Top-X% region** (quantile cutoff).
 * Extract binary mask of high-performing cells.
 * Track the **top centroid** as the single best point after Gaussian smoothing, rather than the mean of the entire Top-X% region.
-920c963a5379e026bc23f39bc2d477
 
 **Metrics:**
 

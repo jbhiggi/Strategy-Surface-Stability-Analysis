@@ -85,7 +85,6 @@ Each experiment produces:
 |  |  |
 |-------------|--------------|
 | ![Jaccard](master_figures/Strat_SMA200_SPY_jaccard_figure.png)<br/><sub>*Figure 1. **Jaccard Index** – Similarity of top-performing regions across time slices. “Consecutive” compares each interval to the one before; “Baseline” compares each interval to the initial (t = 0).* </sub> | ![Drift](master_figures/Strat_SMA200_SPY_drift_magnitude_figure.png)<br/><sub>*Figure 2. **Drift Magnitude** – Magnitude of parameter-space shifts between maximum centroids in consecutive intervals.*</sub> |
-
 | ![Entropy](master_figures/Strat_SMA200_SPY_modifed_entropy_figure.png)<br/><sub>*Figure 3. **Modified Entropy** – A Bernoulli–Shannon–style entropy, weighted to penalize regions that consistently perform poorly across time intervals. Colors are inverted so that more desirable areas appear in yellow, ensuring visual consistency with the other heatmaps.*</sub> | ![Heatmap](master_figures/Strat_SMA200_SPY_full_backtest_heatmap_figure.png)<br/><sub>*Figure 4. **Full Backtest Heatmap** – Percentage-return surface as a function of θ_enter and θ_exit.*</sub> |
 
 ![Combined SPY Grid](master_figures/combined_3x4_grid_SPY.png)  
@@ -184,6 +183,7 @@ It is also important to note that only variables defined as **class attributes**
 | Section              | Link |
 |----------------------|------|
 | 📑 Methodology Doc   | [Full Methodology](docs/methodology.md) |
+| 📈 Strategy Details  | [Strategy Explanation](docs/strategy.md) |
 | 📐 Jaccard Intuition | [Jaccard Explanation](docs/jaccard.md) |
 | 🔢 Entropy Intuition | [Entropy Explanation](docs/entropy.md) |
 

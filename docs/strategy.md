@@ -8,7 +8,7 @@
 
 - Closing price at time $t$, denoted $C_t$
 - Simple moving average (long-term filter):  
-  $$\text{SMA}_{200}(t) = \frac{1}{200}\sum_{i=0}^{199} C_{t-i}$$
+  SMA₍₂₀₀₎(t) = (1/200) Σ₍ᵢ₌₀₎^199 C₍t−i₎
 - RSI with Wilder smoothing (period $n=2$):
   - $U_t = \max(C_t - C_{t-1}, 0)$  
   - $D_t = \max(C_{t-1} - C_t, 0)$  
@@ -23,16 +23,16 @@
 **Trend filter (gate):** only consider longs when $C_t > \text{SMA}_{200}(t)$. Otherwise stay flat.
 
 **Entry (mean reversion long):**
-- If the gate is open **and** $\text{RSI}_2(t) < \theta_{\text{enter}}$ (e.g., 10), then **enter long** at next bar’s open/close per your backtest convention.
+- If the gate is open **and** RSI₂(t) < θ_enter (e.g., 10), then **enter long** at next bar’s open/close per your backtest convention.
 
 **Exit (rebound / take-profit):**
-- While long, exit when $\text{RSI}_2(t) > \theta_{\text{exit}}$ (e.g., 70).
+- While long, exit when RSI₂(t) > θ_exit (e.g., 70).
 
 **Stop/Target (optional but recommended):**
 - ATR-based protective stop and/or take-profit:
   - Compute $\text{ATR}_k(t)$ (e.g., $k=14$).
-  - **Stop:** exit if price falls $s_\text{ATR}\cdot \text{ATR}_k$ below entry (e.g., $s_\text{ATR}=1.0$).
-  - **Target:** exit if price rises $r_\text{ATR}\cdot \text{ATR}_k$ above entry (e.g., $r_\text{ATR}=1.5$).
+  - **Stop:** exit if price falls s_ATR × ATR_k below entry (e.g., s_ATR = 1.0).
+  - **Target:** exit if price rises r_ATR × ATR_k above entry (e.g., r_ATR = 1.5).
 - If both RSI exit and stop/target fire on the same bar, define clear priority (e.g., evaluate stop/target intrabar, RSI on bar close).
 
 ---
