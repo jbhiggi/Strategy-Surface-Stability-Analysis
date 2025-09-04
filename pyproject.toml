@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sambo-stability"
+version = "0.1.0"
+description = "Rolling-window SAMBO optimizer with stability metrics"
+authors = [{ name = "Jack Higginson" }]
+readme = "README.md"
+requires-python = "==3.10.*"
+dependencies = [
+  "numpy<2.0",
+  "pandas",
+  "scipy",
+  "matplotlib",
+  "scikit-learn",
+  "seaborn",
+  "pyyaml",
+  "backtesting==0.6.5",
+  "pandas-ta",
+  "sambo",
+  "tables",
+  "pypdf"
+]
+
+[project.urls]
+Homepage = "https://github.com/<yourusername>/sambo-rolling-stability"
+
+# 👇 Tell setuptools EXACTLY which package to install
+[tool.setuptools]
+packages = ["sambo_stability"]
+
+# (Optional) include non-.py files inside the package, e.g. YAML configs
+[tool.setuptools.package-data]
+sambo_stability = ["config/*.yaml"]
